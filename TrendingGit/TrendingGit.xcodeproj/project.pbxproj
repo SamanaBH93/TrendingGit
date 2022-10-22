@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		346CA3EC28FC4A1C000A7753 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346CA3EB28FC4A1C000A7753 /* LoadingCell.xib */; };
+		346CA3EE28FC506A000A7753 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CA3ED28FC506A000A7753 /* LoadingCell.swift */; };
+		346CA3F128FC831B000A7753 /* GitRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346CA3F028FC831B000A7753 /* GitRepoCell.xib */; };
+		346CA3F328FC8567000A7753 /* GitRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CA3F228FC8567000A7753 /* GitRepoCell.swift */; };
 		3499F44E28FC361900C5F1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499F44D28FC361900C5F1F5 /* AppDelegate.swift */; };
 		3499F45028FC361900C5F1F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499F44F28FC361900C5F1F5 /* SceneDelegate.swift */; };
 		3499F45228FC361900C5F1F5 /* TrendingGitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499F45128FC361900C5F1F5 /* TrendingGitTableViewController.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		346CA3EB28FC4A1C000A7753 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		346CA3ED28FC506A000A7753 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		346CA3F028FC831B000A7753 /* GitRepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitRepoCell.xib; sourceTree = "<group>"; };
+		346CA3F228FC8567000A7753 /* GitRepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoCell.swift; sourceTree = "<group>"; };
 		3499F44A28FC361900C5F1F5 /* TrendingGit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingGit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3499F44D28FC361900C5F1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3499F44F28FC361900C5F1F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		346CA3EA28FC49CF000A7753 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				346CA3EB28FC4A1C000A7753 /* LoadingCell.xib */,
+				346CA3ED28FC506A000A7753 /* LoadingCell.swift */,
+				346CA3F028FC831B000A7753 /* GitRepoCell.xib */,
+				346CA3F228FC8567000A7753 /* GitRepoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3499F44128FC361900C5F1F5 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +157,7 @@
 		3499F47E28FC362B00C5F1F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				346CA3EA28FC49CF000A7753 /* Cells */,
 				3499F45328FC361900C5F1F5 /* Main.storyboard */,
 				3499F45128FC361900C5F1F5 /* TrendingGitTableViewController.swift */,
 			);
@@ -255,8 +275,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346CA3F128FC831B000A7753 /* GitRepoCell.xib in Resources */,
 				3499F45A28FC361A00C5F1F5 /* LaunchScreen.storyboard in Resources */,
 				3499F45728FC361A00C5F1F5 /* Assets.xcassets in Resources */,
+				346CA3EC28FC4A1C000A7753 /* LoadingCell.xib in Resources */,
 				3499F45528FC361900C5F1F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +306,8 @@
 			files = (
 				3499F45228FC361900C5F1F5 /* TrendingGitTableViewController.swift in Sources */,
 				3499F44E28FC361900C5F1F5 /* AppDelegate.swift in Sources */,
+				346CA3F328FC8567000A7753 /* GitRepoCell.swift in Sources */,
+				346CA3EE28FC506A000A7753 /* LoadingCell.swift in Sources */,
 				3499F45028FC361900C5F1F5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
