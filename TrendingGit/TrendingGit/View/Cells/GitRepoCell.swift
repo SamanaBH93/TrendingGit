@@ -18,4 +18,10 @@ class GitRepoCell: UITableViewCell {
         
         userImageView.layer.cornerRadius = userImageView.frame.height/2
     }
+    
+    func populateData(for repo: Repo) {
+        usernameLabel.text = repo.owner.username
+        repoNameLabel.text = repo.name
+        userImageView.setImage(from: repo.owner.imgUrl)
+    }
 }
