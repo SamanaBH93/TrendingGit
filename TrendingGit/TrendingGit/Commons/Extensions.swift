@@ -7,17 +7,24 @@
 
 import UIKit
 
-extension UIImageView {
-    func setImage(from url: String) {
-        guard let imageURL = URL(string: url) else { return }
-        
-        // just not to cause a deadlock in UI!
+class ImageStore: NSObject {
+    static let imageCache = NSCache<NSString, UIImage>()
+    
+    static func getImage(_ urlString: String, completion: @escaping(_ url: String, _ img: UIImage?) -> Void) {
         DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-            
-            let image = UIImage(data: imageData)
-            DispatchQueue.main.async {
-                self.image = image
+            guard let url = URL(string: urlString) else {
+                return
+            }
+
+            let urlToString = url.absoluteString as NSString
+            if let cachedImage = ImageStore.imageCache.object(forKey: urlToString) {
+                completion(urlString, cachedImage)
+            } else if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                    
+                ImageStore.imageCache.setObject(image, forKey: urlToString)
+                completion(urlString, image)
+            } else {
+                completion(urlString, nil)
             }
         }
     }

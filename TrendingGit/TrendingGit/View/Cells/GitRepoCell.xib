@@ -33,7 +33,7 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w80-Bl-NVo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w80-Bl-NVo">
                                 <rect key="frame" x="0.0" y="22" width="39.666666666666664" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="highlightedColor"/>
@@ -45,6 +45,7 @@
                     <constraint firstItem="8g7-Vh-Sqj" firstAttribute="top" secondItem="PMB-bU-c5Q" secondAttribute="top" constant="14.333333333333332" id="Osj-eZ-I3j"/>
                     <constraint firstItem="VUm-LX-efn" firstAttribute="centerY" secondItem="PMB-bU-c5Q" secondAttribute="centerY" id="Z5F-kn-zPd"/>
                     <constraint firstItem="8g7-Vh-Sqj" firstAttribute="leading" secondItem="VUm-LX-efn" secondAttribute="trailing" constant="15.999999999999986" id="dDq-Yj-hZX"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8g7-Vh-Sqj" secondAttribute="trailing" constant="16" id="kP3-HO-DFg"/>
                     <constraint firstAttribute="bottom" secondItem="8g7-Vh-Sqj" secondAttribute="bottom" constant="14.333333333333329" id="t8V-BO-SEG"/>
                     <constraint firstItem="VUm-LX-efn" firstAttribute="top" secondItem="PMB-bU-c5Q" secondAttribute="top" constant="16" id="tt3-7a-xfj"/>
                     <constraint firstItem="VUm-LX-efn" firstAttribute="leading" secondItem="PMB-bU-c5Q" secondAttribute="leading" constant="40" id="v3U-BJ-K7Z"/>

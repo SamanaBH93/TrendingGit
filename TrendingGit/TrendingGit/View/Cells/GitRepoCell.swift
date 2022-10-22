@@ -19,9 +19,22 @@ class GitRepoCell: UITableViewCell {
         userImageView.layer.cornerRadius = userImageView.frame.height/2
     }
     
+    override func prepareForReuse() {
+        userImageView.image = nil
+    }
+    
     func populateData(for repo: Repo) {
         usernameLabel.text = repo.owner.username
         repoNameLabel.text = repo.name
-        userImageView.setImage(from: repo.owner.imgUrl)
+        
+        ImageStore.getImage(repo.owner.imgUrl, completion: {imgUrl, img in
+            DispatchQueue.main.async { [weak self] in
+                if imgUrl == repo.owner.imgUrl {
+                    self?.userImageView.image = img
+                } else {
+                    self?.userImageView.image = nil
+                }
+            }
+        })
     }
 }

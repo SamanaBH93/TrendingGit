@@ -26,22 +26,24 @@ final class NetworkService: NetworkServiceProtocol {
           return
       }
       
-      let task = URLSession.shared.dataTask(with: url) { data, response, error in
+      DispatchQueue.global().async {
+          let task = URLSession.shared.dataTask(with: url) { data, response, error in
 
-          guard let httpResponse = response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200,
-                let data else {
-              completion(.failure)
-              return
+              guard let httpResponse = response as? HTTPURLResponse,
+                        httpResponse.statusCode == 200,
+                    let data else {
+                  completion(.failure)
+                  return
+              }
+              
+              do {
+                  let genericModel = try JSONDecoder().decode(GetGitRepoResponse.self, from: data)
+                  completion(.success(genericModel))
+              } catch {
+                  completion(.failure)
+              }
           }
-          
-          do {
-              let genericModel = try JSONDecoder().decode(GetGitRepoResponse.self, from: data)
-              completion(.success(genericModel))
-          } catch {
-              completion(.failure)
-          }
+          task.resume()
       }
-      task.resume()
   }
 }
