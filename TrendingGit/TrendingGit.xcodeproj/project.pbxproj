@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34265E2A29044B3800933F08 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34265E2929044B3700933F08 /* Extensions.swift */; };
+		34265E2E2905927A00933F08 /* GitRepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34265E2D2905927A00933F08 /* GitRepoCellViewModel.swift */; };
 		346CA3EC28FC4A1C000A7753 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346CA3EB28FC4A1C000A7753 /* LoadingCell.xib */; };
 		346CA3EE28FC506A000A7753 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CA3ED28FC506A000A7753 /* LoadingCell.swift */; };
 		346CA3F128FC831B000A7753 /* GitRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346CA3F028FC831B000A7753 /* GitRepoCell.xib */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		34265E2929044B3700933F08 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		34265E2D2905927A00933F08 /* GitRepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoCellViewModel.swift; sourceTree = "<group>"; };
 		346CA3EB28FC4A1C000A7753 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		346CA3ED28FC506A000A7753 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		346CA3F028FC831B000A7753 /* GitRepoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitRepoCell.xib; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				346CA3F728FD6A10000A7753 /* TrendingGitRepoViewModel.swift */,
+				34265E2D2905927A00933F08 /* GitRepoCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				3499F44E28FC361900C5F1F5 /* AppDelegate.swift in Sources */,
 				346CA3F328FC8567000A7753 /* GitRepoCell.swift in Sources */,
 				346CA3EE28FC506A000A7753 /* LoadingCell.swift in Sources */,
+				34265E2E2905927A00933F08 /* GitRepoCellViewModel.swift in Sources */,
 				346CA3F828FD6A10000A7753 /* TrendingGitRepoViewModel.swift in Sources */,
 				346CA3FA28FD6B12000A7753 /* GetGitRepoResponse.swift in Sources */,
 				346CA3F628FC9ACC000A7753 /* NetworkService.swift in Sources */,

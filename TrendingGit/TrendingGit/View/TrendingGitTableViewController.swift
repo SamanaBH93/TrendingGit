@@ -17,6 +17,7 @@ class TrendingGitTableViewController: UITableViewController {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 70
         tableView.register(UINib(nibName: "LoadingCell", bundle: .main), forCellReuseIdentifier: "LoadingCell")
         tableView.register(UINib(nibName: "GitRepoCell", bundle: .main), forCellReuseIdentifier: "GitRepoCell")
         viewModel = TrendingGitRepoViewModel(networkService: NetworkService(), delegate: self)
@@ -24,7 +25,7 @@ class TrendingGitTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        70
+        return UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +39,13 @@ class TrendingGitTableViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LoadingCell", for: indexPath)
             return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let repo = viewModel.getData(for: indexPath.row) {
+            repo.isDetailHidden = !repo.isDetailHidden
+            tableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }
 }

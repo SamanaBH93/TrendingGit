@@ -12,7 +12,7 @@ import Foundation
 protocol TrendingGitRepoViewModelProtocol {
     func getTrendingGitRepos()
     func getRowCount() -> Int
-    func getData(for row: Int) -> Repo?
+    func getData(for row: Int) -> GitRepoCellViewModel?
 }
 
 protocol TrendingGitRepoViewModelDelegate: AnyObject {
@@ -26,7 +26,7 @@ class TrendingGitRepoViewModel: TrendingGitRepoViewModelProtocol {
     private let networkService: NetworkServiceProtocol
     private weak var delegate: TrendingGitRepoViewModelDelegate!
     
-    private var repos: [Repo] = []
+    private var repos: [GitRepoCellViewModel] = []
     
     init(networkService: NetworkServiceProtocol, delegate: TrendingGitRepoViewModelDelegate) {
         self.networkService = networkService
@@ -41,7 +41,7 @@ class TrendingGitRepoViewModel: TrendingGitRepoViewModelProtocol {
             DispatchQueue.main.async {
                 switch response {
                 case .success(let result):
-                    self?.repos = result.items
+                    self?.repos = result.items.map { GitRepoCellViewModel(repoName: $0.name, description: $0.description, ownerName: $0.owner.username, ownerImageUrl: $0.owner.imgUrl, language: $0.language ?? "", starCount: $0.stargazers_count) }
                     self?.delegate.fetchComplete()
                 case .failure:
                     //do something
@@ -56,7 +56,7 @@ class TrendingGitRepoViewModel: TrendingGitRepoViewModelProtocol {
         // Keeping 10 to show empty cells
     }
     
-    func getData(for row: Int) -> Repo? {
+    func getData(for row: Int) -> GitRepoCellViewModel? {
         guard row < repos.count else {
             return nil
         }

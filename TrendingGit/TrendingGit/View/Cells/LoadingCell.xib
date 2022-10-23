@@ -22,6 +22,7 @@
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="38" id="hsr-p7-z1n"/>
+                            <constraint firstAttribute="height" constant="38" id="zp6-N5-ie3"/>
                         </constraints>
                     </view>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vso-yM-3Kg">
@@ -47,6 +48,7 @@
                     <constraint firstItem="5Lb-Bh-c6c" firstAttribute="top" secondItem="nOy-Tv-jna" secondAttribute="top" constant="16" id="Hj0-9q-jhL"/>
                     <constraint firstItem="mRv-y3-hNz" firstAttribute="leading" secondItem="5Lb-Bh-c6c" secondAttribute="trailing" constant="16" id="PPi-lV-At4"/>
                     <constraint firstItem="vso-yM-3Kg" firstAttribute="top" secondItem="5Lb-Bh-c6c" secondAttribute="top" id="aS6-Sq-o4F"/>
+                    <constraint firstAttribute="bottom" secondItem="5Lb-Bh-c6c" secondAttribute="bottom" constant="16" id="cXw-97-Yh9"/>
                     <constraint firstItem="5Lb-Bh-c6c" firstAttribute="leading" secondItem="nOy-Tv-jna" secondAttribute="leading" constant="40" id="phS-yH-sPe"/>
                     <constraint firstItem="5Lb-Bh-c6c" firstAttribute="centerY" secondItem="nOy-Tv-jna" secondAttribute="centerY" id="yCC-fZ-bWe"/>
                 </constraints>
