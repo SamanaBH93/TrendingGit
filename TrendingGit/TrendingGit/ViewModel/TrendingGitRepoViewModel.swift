@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 protocol TrendingGitRepoViewModelProtocol {
     func getTrendingGitRepos()
     func getRowCount() -> Int

@@ -12,6 +12,10 @@ class TrendingGitTableViewController: UITableViewController {
 
     var viewModel: TrendingGitRepoViewModelProtocol!
     
+    @IBOutlet weak var failureView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var retryButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,7 +25,11 @@ class TrendingGitTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "LoadingCell", bundle: .main), forCellReuseIdentifier: "LoadingCell")
         tableView.register(UINib(nibName: "GitRepoCell", bundle: .main), forCellReuseIdentifier: "GitRepoCell")
         viewModel = TrendingGitRepoViewModel(networkService: NetworkService(), delegate: self)
-        viewModel.getTrendingGitRepos()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -60,7 +68,21 @@ extension TrendingGitTableViewController: TrendingGitRepoViewModelDelegate {
     }
     
     func showError() {
-        // TODO: - Show Error Screen
+        failureView.frame = tableView.bounds
+        tableView.addSubview(failureView)
+        retryButton.layer.borderWidth = 1
+        retryButton.layer.borderColor = UIColor.green.cgColor
+        retryButton.tintColor = UIColor.green
+        retryButton.addTarget(self, action: #selector(retryTapped(_:)), for: .touchUpInside)
+        let gif = UIImage.gifImageWithName("retry")
+        imageView.image = gif
+        retryButton.layer.cornerRadius = 5
+        
+    }
+    
+    @objc private func retryTapped(_ sender: Any) {
+        failureView.removeFromSuperview()
+        viewModel.getTrendingGitRepos()
     }
 }
 
