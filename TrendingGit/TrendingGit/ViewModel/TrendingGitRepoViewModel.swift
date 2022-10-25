@@ -29,7 +29,6 @@ class TrendingGitRepoViewModel: TrendingGitRepoViewModelProtocol {
     init(networkService: NetworkServiceProtocol, delegate: TrendingGitRepoViewModelDelegate) {
         self.networkService = networkService
         self.delegate = delegate
-        getTrendingGitRepos()
     }
     
     func getTrendingGitRepos() {

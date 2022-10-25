@@ -9,8 +9,9 @@ import UIKit
 
 class TrendingGitTableViewController: UITableViewController {
     static let identifier = "TrendingGitTableViewController"
+    typealias ViewModel = TrendingGitRepoViewModelProtocol
 
-    var viewModel: TrendingGitRepoViewModelProtocol!
+    private var viewModel: ViewModel!
     
     @IBOutlet weak var failureView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -19,17 +20,20 @@ class TrendingGitTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupView()
+        viewModel.getTrendingGitRepos()
+    }
+    
+    private func setupView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 70
         tableView.register(UINib(nibName: "LoadingCell", bundle: .main), forCellReuseIdentifier: "LoadingCell")
         tableView.register(UINib(nibName: "GitRepoCell", bundle: .main), forCellReuseIdentifier: "GitRepoCell")
-        viewModel = TrendingGitRepoViewModel(networkService: NetworkService(), delegate: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
+    func bind(viewModel: ViewModel) {
+        self.viewModel = viewModel
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
