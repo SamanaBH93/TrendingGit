@@ -16,7 +16,7 @@ class TrendingGitTableViewController: UITableViewController {
     @IBOutlet weak var failureView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var retryButton: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,6 +30,18 @@ class TrendingGitTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 70
         tableView.register(UINib(nibName: "LoadingCell", bundle: .main), forCellReuseIdentifier: "LoadingCell")
         tableView.register(UINib(nibName: "GitRepoCell", bundle: .main), forCellReuseIdentifier: "GitRepoCell")
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action:
+                     #selector(handleRefresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+        
+        tableView.refreshControl = refreshControl
+        
+    }
+    
+    @objc private func handleRefresh(_ sender: Any) {
+        viewModel.getTrendingGitRepos()
     }
     
     func bind(viewModel: ViewModel) {
@@ -68,6 +80,7 @@ extension TrendingGitTableViewController: TrendingGitRepoViewModelDelegate {
     }
     
     func fetchComplete() {
+        refreshControl?.endRefreshing()
         tableView.reloadData()
     }
     
