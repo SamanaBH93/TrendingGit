@@ -11,7 +11,7 @@ import XCTest
 final class TrendingGitBuilderTests: XCTestCase {
 
     func testBuild() {
-        let nav = TrendingGitTableViewControllerBuilder.build()
+        let nav = TrendingGitTableViewBuilder.build()
         XCTAssert(nav.topViewController is TrendingGitTableViewController)
     }
 }

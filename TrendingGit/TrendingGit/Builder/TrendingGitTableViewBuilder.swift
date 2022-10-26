@@ -1,5 +1,5 @@
 //
-//  TrendingGitTableViewControllerBuilder.swift
+//  TrendingGitTableViewBuilder.swift
 //  TrendingGit
 //
 //  Created by VenD-Samana on 25/10/2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TrendingGitTableViewControllerBuilder {
+class TrendingGitTableViewBuilder {
     static func build() -> UINavigationController {
         if let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: TrendingGitTableViewController.identifier) as? TrendingGitTableViewController {
             let networkService = NetworkService()
@@ -17,7 +17,6 @@ class TrendingGitTableViewControllerBuilder {
             let nav = UINavigationController(rootViewController: vc)
             return nav
         }
-        
         return UINavigationController()
     }
 }

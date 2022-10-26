@@ -53,6 +53,7 @@
                     <constraint firstItem="5Lb-Bh-c6c" firstAttribute="centerY" secondItem="nOy-Tv-jna" secondAttribute="centerY" id="yCC-fZ-bWe"/>
                 </constraints>
             </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="LoadingCell"/>
             <connections>
                 <outlet property="circleImageView" destination="5Lb-Bh-c6c" id="2zv-rC-0at"/>
                 <outlet property="descriptionView" destination="mRv-y3-hNz" id="yzj-Sq-C6H"/>

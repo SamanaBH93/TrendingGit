@@ -58,16 +58,7 @@ extension UIView {
     animation.toValue = [0.8, 0.9, 1.0]
     animation.duration = CFTimeInterval(1.4)
     animation.repeatCount = .greatestFiniteMagnitude
-    CATransaction.setCompletionBlock { [weak self] in
-      guard let strongSelf = self else { return }
-      strongSelf.layer.mask = nil
-    }
     gradientLayer.add(animation, forKey: "shimmerAnimation")
     CATransaction.commit()
   }
-  
-  func stopShimmeringAnimation() {
-    self.layer.mask = nil
-  }
-  
 }

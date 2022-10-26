@@ -75,10 +75,6 @@ class TrendingGitTableViewController: UITableViewController {
 }
 
 extension TrendingGitTableViewController: TrendingGitRepoViewModelDelegate {
-    func startLoading() {
-        // TODO: - Show Activity indicator
-    }
-    
     func fetchComplete() {
         refreshControl?.endRefreshing()
         tableView.reloadData()
@@ -94,7 +90,6 @@ extension TrendingGitTableViewController: TrendingGitRepoViewModelDelegate {
         let gif = UIImage.gifImageWithName("retry")
         imageView.image = gif
         retryButton.layer.cornerRadius = 5
-        
     }
     
     @objc private func retryTapped(_ sender: Any) {

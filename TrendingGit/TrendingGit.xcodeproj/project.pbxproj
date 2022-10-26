@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		34265E2A29044B3800933F08 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34265E2929044B3700933F08 /* Extensions.swift */; };
 		34265E2E2905927A00933F08 /* GitRepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34265E2D2905927A00933F08 /* GitRepoCellViewModel.swift */; };
+		34339F8329093C7B007E9989 /* TrendingGitTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34339F8229093C7B007E9989 /* TrendingGitTableViewControllerTests.swift */; };
 		345FEC7B2905E51C00549E80 /* retry.gif in Resources */ = {isa = PBXBuildFile; fileRef = 345FEC7A2905E51C00549E80 /* retry.gif */; };
 		34694FDA2906DCB200FD9315 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34694FD92906DCB200FD9315 /* ImageStore.swift */; };
-		34694FDD29080B5100FD9315 /* TrendingGitTableViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34694FDC29080B5100FD9315 /* TrendingGitTableViewControllerBuilder.swift */; };
+		34694FDD29080B5100FD9315 /* TrendingGitTableViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34694FDC29080B5100FD9315 /* TrendingGitTableViewBuilder.swift */; };
 		34694FDF29082B6100FD9315 /* TrendingGitBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34694FDE29082B6100FD9315 /* TrendingGitBuilderTests.swift */; };
 		346CA3EC28FC4A1C000A7753 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 346CA3EB28FC4A1C000A7753 /* LoadingCell.xib */; };
 		346CA3EE28FC506A000A7753 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346CA3ED28FC506A000A7753 /* LoadingCell.swift */; };
@@ -28,7 +29,7 @@
 		3499F45A28FC361A00C5F1F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3499F45828FC361A00C5F1F5 /* LaunchScreen.storyboard */; };
 		3499F46528FC361A00C5F1F5 /* TrendingGitRepoViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499F46428FC361A00C5F1F5 /* TrendingGitRepoViewModelTests.swift */; };
 		3499F46F28FC361A00C5F1F5 /* TrendingGitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499F46E28FC361A00C5F1F5 /* TrendingGitUITests.swift */; };
-		3499F47128FC361A00C5F1F5 /* TrendingGitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3499F47028FC361A00C5F1F5 /* TrendingGitUITestsLaunchTests.swift */; };
+		34F4A93129092C2400289EEF /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F4A93029092C2400289EEF /* NetworkServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +52,10 @@
 /* Begin PBXFileReference section */
 		34265E2929044B3700933F08 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		34265E2D2905927A00933F08 /* GitRepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoCellViewModel.swift; sourceTree = "<group>"; };
+		34339F8229093C7B007E9989 /* TrendingGitTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGitTableViewControllerTests.swift; sourceTree = "<group>"; };
 		345FEC7A2905E51C00549E80 /* retry.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = retry.gif; sourceTree = "<group>"; };
 		34694FD92906DCB200FD9315 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
-		34694FDC29080B5100FD9315 /* TrendingGitTableViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGitTableViewControllerBuilder.swift; sourceTree = "<group>"; };
+		34694FDC29080B5100FD9315 /* TrendingGitTableViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGitTableViewBuilder.swift; sourceTree = "<group>"; };
 		34694FDE29082B6100FD9315 /* TrendingGitBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGitBuilderTests.swift; sourceTree = "<group>"; };
 		346CA3EB28FC4A1C000A7753 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		346CA3ED28FC506A000A7753 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 		3499F46428FC361A00C5F1F5 /* TrendingGitRepoViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGitRepoViewModelTests.swift; sourceTree = "<group>"; };
 		3499F46A28FC361A00C5F1F5 /* TrendingGitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrendingGitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3499F46E28FC361A00C5F1F5 /* TrendingGitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGitUITests.swift; sourceTree = "<group>"; };
-		3499F47028FC361A00C5F1F5 /* TrendingGitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		34F4A93029092C2400289EEF /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,7 @@
 		34694FDB29080B2B00FD9315 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				34694FDC29080B5100FD9315 /* TrendingGitTableViewControllerBuilder.swift */,
+				34694FDC29080B5100FD9315 /* TrendingGitTableViewBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -168,11 +170,9 @@
 				346CA3F428FC9AB1000A7753 /* Networking */,
 				3499F47F28FC363200C5F1F5 /* ViewModel */,
 				3499F47E28FC362B00C5F1F5 /* View */,
-				3499F47D28FC362400C5F1F5 /* Model */,
 				3499F44D28FC361900C5F1F5 /* AppDelegate.swift */,
 				3499F44F28FC361900C5F1F5 /* SceneDelegate.swift */,
 				3499F45628FC361A00C5F1F5 /* Assets.xcassets */,
-				3499F45828FC361A00C5F1F5 /* LaunchScreen.storyboard */,
 				3499F45B28FC361A00C5F1F5 /* Info.plist */,
 			);
 			path = TrendingGit;
@@ -183,6 +183,8 @@
 			children = (
 				3499F46428FC361A00C5F1F5 /* TrendingGitRepoViewModelTests.swift */,
 				34694FDE29082B6100FD9315 /* TrendingGitBuilderTests.swift */,
+				34F4A93029092C2400289EEF /* NetworkServiceTests.swift */,
+				34339F8229093C7B007E9989 /* TrendingGitTableViewControllerTests.swift */,
 			);
 			path = TrendingGitTests;
 			sourceTree = "<group>";
@@ -191,21 +193,14 @@
 			isa = PBXGroup;
 			children = (
 				3499F46E28FC361A00C5F1F5 /* TrendingGitUITests.swift */,
-				3499F47028FC361A00C5F1F5 /* TrendingGitUITestsLaunchTests.swift */,
 			);
 			path = TrendingGitUITests;
-			sourceTree = "<group>";
-		};
-		3499F47D28FC362400C5F1F5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		3499F47E28FC362B00C5F1F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3499F45828FC361A00C5F1F5 /* LaunchScreen.storyboard */,
 				346CA3EA28FC49CF000A7753 /* Cells */,
 				3499F45328FC361900C5F1F5 /* Main.storyboard */,
 				3499F45128FC361900C5F1F5 /* TrendingGitTableViewController.swift */,
@@ -363,7 +358,7 @@
 				346CA3F328FC8567000A7753 /* GitRepoCell.swift in Sources */,
 				346CA3EE28FC506A000A7753 /* LoadingCell.swift in Sources */,
 				34265E2E2905927A00933F08 /* GitRepoCellViewModel.swift in Sources */,
-				34694FDD29080B5100FD9315 /* TrendingGitTableViewControllerBuilder.swift in Sources */,
+				34694FDD29080B5100FD9315 /* TrendingGitTableViewBuilder.swift in Sources */,
 				346CA3F828FD6A10000A7753 /* TrendingGitRepoViewModel.swift in Sources */,
 				346CA3FA28FD6B12000A7753 /* GetGitRepoResponse.swift in Sources */,
 				346CA3F628FC9ACC000A7753 /* NetworkService.swift in Sources */,
@@ -376,6 +371,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3499F46528FC361A00C5F1F5 /* TrendingGitRepoViewModelTests.swift in Sources */,
+				34339F8329093C7B007E9989 /* TrendingGitTableViewControllerTests.swift in Sources */,
+				34F4A93129092C2400289EEF /* NetworkServiceTests.swift in Sources */,
 				34694FDF29082B6100FD9315 /* TrendingGitBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +381,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3499F47128FC361A00C5F1F5 /* TrendingGitUITestsLaunchTests.swift in Sources */,
 				3499F46F28FC361A00C5F1F5 /* TrendingGitUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

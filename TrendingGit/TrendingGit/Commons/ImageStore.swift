@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageStore: NSObject {
+class ImageStore {
     static let imageCache = NSCache<NSString, UIImage>()
     
     static func getImage(_ urlString: String, completion: @escaping(_ url: String, _ img: UIImage?) -> Void) {

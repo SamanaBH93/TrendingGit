@@ -16,10 +16,7 @@ protocol NetworkServiceProtocol {
     func request(url: String, completion: @escaping (Result<GetGitRepoResponse>) -> Void)
 }
 
-
 final class NetworkService: NetworkServiceProtocol {
-  
-  
   func request(url: String, completion: @escaping (Result<GetGitRepoResponse>) -> Void) {
       guard let url = URL(string: url) else {
           completion(.failure)

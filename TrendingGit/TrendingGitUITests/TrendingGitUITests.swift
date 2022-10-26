@@ -10,24 +10,27 @@ import XCTest
 final class TrendingGitUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testHappyFlow() throws {
         let app = XCUIApplication()
+        let tableView = app.tables.firstMatch
+        let loadingCell = tableView.cells["LoadingCell"]
+        let gitRepoCell = tableView.cells["GitRepoCell"]
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(loadingCell.waitForExistence(timeout: 5))
+        XCTAssert(gitRepoCell.waitForExistence(timeout: 5))
+        
+        let firstCell = tableView.cells["GitRepoCell"].firstMatch
+        let detailsView = firstCell.images["StarImageView"]
+        firstCell.tap()
+        XCTAssert(detailsView.waitForExistence(timeout: 5))
+        firstCell.tap()
+        XCTAssertFalse(detailsView.exists)
+        tableView.swipeDown()
+        XCTAssert(gitRepoCell.exists)
+        
     }
 
     func testLaunchPerformance() throws {

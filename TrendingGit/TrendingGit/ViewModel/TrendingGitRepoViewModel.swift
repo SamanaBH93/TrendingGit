@@ -14,7 +14,6 @@ protocol TrendingGitRepoViewModelProtocol {
 }
 
 protocol TrendingGitRepoViewModelDelegate: AnyObject {
-    func startLoading()
     func fetchComplete()
     func showError()
 }
